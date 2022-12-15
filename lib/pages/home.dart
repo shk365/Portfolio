@@ -16,13 +16,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    //var screenSize = MediaQuery.of(context).size;
     Color baseColor = const Color.fromARGB(255, 53, 117, 236);
     Color subColor = const Color.fromARGB(255, 38, 65, 120);
     Color BgColor = const Color.fromARGB(255, 157, 188, 245);
     return Scaffold(
       body:
-          //controller: _scrollController,
           SingleChildScrollView(
         child: Container(
           color: Colors.white,
