@@ -24,7 +24,7 @@ class Timeline extends StatelessWidget {
         Container(
           child: const Text(
             'About',
-            style: TextStyle(fontSize: 60),
+            style: TextStyle(fontSize: 40),
           ),
         ),
         const SizedBox(
@@ -63,11 +63,11 @@ class Timeline extends StatelessWidget {
                         ),
                         Text(
                           info[index][1],
-                          style: const TextStyle(fontSize: 30),
+                          style: const TextStyle(fontSize: 20),
                         ),
                         Text(
                           info[index][2],
-                          style: const TextStyle(fontSize: 20),
+                          style: const TextStyle(fontSize: 18),
                         ),
                         Text(
                           info[index][3],

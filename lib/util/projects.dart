@@ -1,66 +1,61 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class Projects extends StatelessWidget {
-  const Projects({super.key});
+class Projects extends StatefulWidget {
+  @override
+  _Projects createState() => _Projects();
+}
+
+class _Projects extends State<Projects> {
+  final List<String> images = [
+    'images/to_do_project.png',
+    'images/fav_word_project.png',
+    'images/wordpair_generator_project.png',
+  ];
+
+  List<Widget> generateImageTiles(screenSize) {
+    return images
+        .map(
+          (element) => ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.asset(
+                element,
+                fit: BoxFit.cover,
+              ),
+            ),
+        )
+        .toList();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-            'Projects',
-            style: TextStyle(fontSize: 60),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          CarouselSlider(
-            items: [
-              InkWell(
-                onTap: () => launchUrlString('https://todo1365.netlify.app/#/'),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16.0),
-                  child: const Image(image: AssetImage('images/project.png')),
-                ),
+    var screenSize = MediaQuery.of(context).size;
+    var imageSliders = generateImageTiles(screenSize);
+    return Column(
+      children: [
+        const Text(
+          'Projects',
+          style: TextStyle(fontSize: 40),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        Container(
+          constraints:
+              const BoxConstraints(maxHeight: 500, maxWidth: double.infinity),
+          child: Stack(children: [
+            CarouselSlider(
+              items: imageSliders,
+              options: CarouselOptions(
+                enlargeCenterPage: true,
+                aspectRatio: 18 / 8,
+                autoPlay: true,
               ),
-              InkWell(
-                onTap: () => launchUrlString('https://todo1365.netlify.app/#/'),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16.0),
-                  child: const Image(image: AssetImage('images/project1.png')),
-                ),
-              ),
-              InkWell(
-                onTap: () => launchUrlString('https://wordpair-generator.netlify.app/#/'),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16.0),
-                  child: const Image(image: AssetImage('images/project2.png')),
-                ),
-              ),
-            ],
-            options: CarouselOptions(
-              height: 450.0,
-              enlargeCenterPage: true,
-              autoPlay: true,
-              aspectRatio: 16 / 9,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: true,
-              autoPlayAnimationDuration: const Duration(milliseconds: 800),
-              viewportFraction: 0.8,
-            ),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-        ],
-      ),
+            )
+          ]),
+        ),
+      ],
     );
   }
 }

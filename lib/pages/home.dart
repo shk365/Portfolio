@@ -4,6 +4,7 @@ import 'package:portfolio/util/projects.dart';
 import 'package:portfolio/util/skills.dart';
 import 'package:portfolio/util/timeline.dart';
 import 'package:simple_icons/simple_icons.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -18,8 +19,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     //var screenSize = MediaQuery.of(context).size;
     Color baseColor = const Color.fromARGB(255, 53, 117, 236);
-    Color subColor = const Color.fromARGB(255, 38, 65, 120);
-    Color BgColor = const Color.fromARGB(255, 157, 188, 245);
     return Scaffold(
       body:
           //controller: _scrollController,
@@ -108,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {},
                           icon: const Icon(SimpleIcons.facebook)),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () => launchUrlString('https://github.com/shk365'),
                           icon: const Icon(SimpleIcons.github)),
                       IconButton(
                           onPressed: () {},

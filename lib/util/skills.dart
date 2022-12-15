@@ -17,32 +17,41 @@ class Skills extends StatelessWidget {
       margin: const EdgeInsets.all(8.0),
       child: Column(
         children: [
+          const SizedBox(
+            height: 30,
+          ),
           const Text(
             'Skills',
-            style: TextStyle(fontSize: 60),
+            style: TextStyle(fontSize: 40),
           ),
           const SizedBox(
             height: 30,
           ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(child: Image.asset('images/python.png', fit: BoxFit.contain)),
-                  Expanded(child: Image.asset('images/java.png', fit: BoxFit.contain)),
-                ]
+              padding: const EdgeInsets.all(40.0),
+              child: Container(
+                constraints: const BoxConstraints(maxWidth: 600),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(child: Image.asset('images/python.png', fit: BoxFit.contain)),
+                    Expanded(child: Image.asset('images/java.png', fit: BoxFit.contain)),
+                  ]
+                ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(child: Image.asset('images/mysql.png', fit: BoxFit.contain)),
-                  Expanded(child: Image.asset('images/flutter.png', fit: BoxFit.contain)),
-                ]
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                constraints: const BoxConstraints(maxWidth: 600),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(child: Image.asset('images/mysql.png', fit: BoxFit.contain)),
+                    Expanded(child: Image.asset('images/flutter.png', fit: BoxFit.contain)),
+                  ]
+                ),
               ),
             ), 
         ],
