@@ -8,6 +8,7 @@ class Projects extends StatefulWidget {
 
 class _Projects extends State<Projects> {
   final List<String> images = [
+    'images/Shopy_preview_image.png',
     'images/to_do_project.png',
     'images/fav_word_project.png',
     'images/wordpair_generator_project.png',
@@ -16,13 +17,17 @@ class _Projects extends State<Projects> {
   List<Widget> generateImageTiles(screenSize) {
     return images
         .map(
-          (element) => ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.asset(
-                element,
-                fit: BoxFit.cover,
+          (element) => Card(
+            elevation: 16,
+            shadowColor: Colors.grey,
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.asset(
+                  element,
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
+          ),
         )
         .toList();
   }
