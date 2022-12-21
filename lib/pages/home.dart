@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:portfolio/util/projects.dart';
 import 'package:portfolio/util/skills.dart';
@@ -75,7 +74,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     margin: const EdgeInsets.all(8),
                     padding: const EdgeInsets.all(8.0),
                     width: 740,
-                    //height: 410,
                     child: Image.asset(
                       'assets/images/developer.png',
                       fit: BoxFit.fill,
